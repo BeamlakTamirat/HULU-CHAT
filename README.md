@@ -1,4 +1,4 @@
-# 🐾 HULU-CHAT: Perfectly Simple Chat 🐾
+# 🐾 HULU-CHAT 🐾
 
 ## 🚀 Overview
 
