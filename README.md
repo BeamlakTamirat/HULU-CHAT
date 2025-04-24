@@ -1,4 +1,11 @@
-# 🐾 HULU-CHAT 🐾
+# 💫 HULU-CHAT 📲     
+* Watch a video below:🚀
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=XD-Njn2ERDY">
+    <img src="https://img.youtube.com/vi/XD-Njn2ERDY/0.jpg" alt="Watch the demo" width="560" />
+  </a>
+</p>
+
 
 ## 🚀 Overview
 
@@ -7,12 +14,12 @@ HULU-CHAT is a delightful Flutter-based chat application designed for seamless c
 ## ✨ Key Features
 
 *   **Real-time Chat:** Engage in instant conversations with other users.
-*   **Authentication:** Secure user registration and login.
+*   **Authentication:** Secure user registration and login.🔐
 *   **Theming:** Customize the app's appearance with light and dark modes.
 *   **User Profiles:** Manage and personalize your profile.
 *   **Drawer Navigation:** Easy access to settings, profile, and more.
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack 🤖
 
 *   **Flutter:** UI framework for cross-platform development.
 *   **Firebase:**
