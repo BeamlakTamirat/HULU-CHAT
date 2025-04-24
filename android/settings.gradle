@@ -1,0 +1,48 @@
+pluginManagement {
+    def flutterSdkPath = {
+        def properties = new Properties()
+        file("local.properties").withInputStream { properties.load(it) }
+        def flutterSdkPath = properties.getProperty("flutter.sdk")
+        assert flutterSdkPath != null, "flutter.sdk not set in local.properties"
+        return flutterSdkPath
+    }()
+
+    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+    id "com.android.application" version "8.2.1" apply false
+    // START: FlutterFire Configuration
+    id "com.google.gms.google-services" version "4.3.15" apply false
+    // END: FlutterFire Configuration
+    id "org.jetbrains.kotlin.android" version "2.0.20" apply false
+}
+
+include ":app"
+
+// This fixes the namespace issue with image-related plugins
+gradle.ext.flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
+
+gradle.beforeProject { project ->
+    project.with {
+        if (name.contains('flutter_image_compress') || 
+            name.contains('image_picker') || 
+            name.contains('storage')) {
+            
+            project.plugins.withId('com.android.library') {
+                android {
+                    if (!hasProperty('namespace')) {
+                        namespace = "com.example.${project.name.replace('-', '_').replace(' ', '_')}"
+                    }
+                }
+            }
+        }
+    }
+}
